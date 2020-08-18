@@ -1,0 +1,21 @@
+<div class="forks" *ngIf="!!isValidConfig">
+  <div class="title">
+    <h1>{{username}}/{{repo}} Repository Forks:</h1>
+    <p>Count: <strong>{{forks_count | number}}</strong></p>
+  </div>
+  <app-users 
+    [users]="forks"
+    (handlePageChange)="handlePageChange($event)"
+    [count]="forks_count"
+    [loader]="loader"
+  ></app-users>
+</div>
+
+<!-- If not valid config. Error message -->
+<div class="forks" *ngIf="!isValidConfig">
+  <h2>
+    Please provide valid repository info in 
+    <code>src/app/config/index.ts</code>
+    file.
+  </h2>
+</div>

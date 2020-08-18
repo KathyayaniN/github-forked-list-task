@@ -1,0 +1,49 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1E88E5;
+  color: #fafafa;
+  z-index: 100;
+
+  nav {
+    height: 50px;
+    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .brand {
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+      font-weight: 300;
+    }
+
+    ul {
+      margin-right: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        cursor: pointer;
+        user-select: none;
+        padding: 0.25rem 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        
+        a {
+          text-decoration: none;
+          color: #c1c1c1;
+          
+          &.active,
+          &:hover {
+            color: #fff;
+          }
+        }
+        
+      }
+    }
+  }
+}

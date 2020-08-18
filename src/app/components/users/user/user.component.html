@@ -1,0 +1,15 @@
+<div class="user">
+  <div class="user__meta">
+    <img [src]="user.avatar_url" />
+    <h2>{{ user.login }}</h2>
+  </div>
+  
+  <div class="user__actions" *ngIf="!loading">
+    <button class="btn btn-primary" *ngIf="!isFollowingUser" (click)="followUser()">
+      Follow
+    </button>
+    <button class="btn btn-danger" *ngIf="!!isFollowingUser" (click)="unfollowUser()">
+      Unfollow
+    </button>
+  </div>
+</div>

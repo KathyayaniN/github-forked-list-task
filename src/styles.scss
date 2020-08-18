@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+$sidebar-height: 50px;
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: #fafafa;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+main {
+  margin: $sidebar-height auto 0;
+  width: 100%;
+  max-width: 1024px;
+  min-height: calc(100vh - #{$sidebar-height});
+  background: #fff;
+  color: #4C4A48;
+}
+
+.ngx-pagination {
+  text-align: center;
+  margin-top: 2rem;
+}

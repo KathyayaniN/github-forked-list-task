@@ -1,0 +1,17 @@
+<ul *ngIf="!loader">
+  <li *ngFor="let item of users | paginate: { itemsPerPage: itemsPerPage, currentPage: page, totalItems:count }">
+    <app-user [user]="item.owner" [currentUsername]="username"></app-user>
+  </li>
+  
+  <!-- No data to display. -->
+  <li *ngIf="users.length <= 0">
+    No data to display.
+  </li>
+</ul>
+
+<!-- Loader -->
+<app-loader *ngIf="loader" [loader]="loader"></app-loader>
+
+
+<!-- Pagination Controls -->
+<pagination-controls *ngIf="(count > 0 || users.length > 0) && !loader" (pageChange)="onPageChange($event)"></pagination-controls>
